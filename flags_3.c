@@ -9,6 +9,9 @@
  */
 int app_hash(const char *pattern, int len_p, char *buffer)
 {
+int per;
+int len_buff = 0;
+int start;
 int i = _strlen(buffer);
 char cs = pattern[len_p - 1];
  if ((cs == 'o' || cs == 'x' || cs == 'X') && check_flag(pattern, len_p, '#'))
@@ -21,7 +24,8 @@ buffer[per] != '0' ? buffer[per - 1] = '0' : 1;
 else if (per >= 2 || (per == 0 && buffer[per] == '0'))
 {
 if (per >= 2)
-buffer[per - 1] = cs, buffer[per - 2] = '0';
+buffer[per - 1] = cs;
+buffer[per - 2] = '0';
 }
 else
 {

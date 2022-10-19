@@ -67,7 +67,7 @@ continue;
 }
 _memcpy(buffer, format + i, &i_buffer, &stock, 1), i++;
 }
-va_end(list), i_buffer = write(1, buffer, i_buffer), free(buffer)
+va_end(list), i_buffer = write(1, buffer, i_buffer), free(buffer);
 return (i == 0 && !format ? -1 : stock + i_buffer);
 }
 /**
